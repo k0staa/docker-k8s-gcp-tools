@@ -18,8 +18,9 @@ RUN cd /tmp \
     && mv ./k9s /usr/local/bin
 
 RUN apt-get update -y && apt install -y vim less jq
-
-ENTRYPOINT ["sh","-c", "bash"]
+ADD connect_to_cluster.sh /
+ADD set_namespace.sh /
+ENTRYPOINT ["sh","-c", "gcloud auth login && bash"]
 
 
 
