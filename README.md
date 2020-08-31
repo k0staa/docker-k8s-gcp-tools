@@ -12,10 +12,11 @@ for every environment you have ! You could have as many env files as you want.
 Then just create run script using example `example_run.sh`:
 ```
 #!/bin/bash
-docker run -it --rm --env-file ./example_env  --network host --name kubernetes-yourproject gcp-helm-kubernetes-tools
+docker run -it --rm --env-file ./example_env -v /var/run/docker.sock:/var/run/docker.sock  --network host --name kubernetes-yourproject gcp-helm-kubernetes-tools
 ```
 substituting `--env-file` value with your env file and `--name` value with new container name.
 
+In this example I also added docker socket to container. By adding that you can for example push to GCP container registry.
 
 ## Available tools
 K9S, kubectl, gcloud.
