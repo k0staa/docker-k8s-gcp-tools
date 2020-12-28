@@ -1,3 +1,4 @@
 *.sh
 !example_run.sh
 .env*
+!build.sh
