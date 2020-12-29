@@ -1,4 +1,6 @@
 *.sh
 !example_run.sh
+!set_namespace.sh
+!connect_to_cluster.sh
 .env*
 !build.sh
